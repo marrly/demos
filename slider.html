@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>完整无缝轮播</title>
+    <style>
+        body{
+            user-select:none;
+        }
+        ul{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .slider{
+            width: 1000px;
+            height: 1000px;
+            position: relative;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%);
+        }
+
+        .slide_list{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .slide_item{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .slide_item ._img{
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+        }
+        .slider_icon{
+            width: 260px;
+            height: 20px;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%);
+            bottom: 50px;
+        }
+        .slider_icon_top{
+            width: 20px;
+            height: 192px;
+            position: absolute;
+            left: 95%;
+            bottom: 3%;
+        }
+        .slider_icon span{
+            display: block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 1px solid #fff;
+            float: left;
+            margin-left: 20px;
+            margin-top: 8px;
+        }
+        .icon-first{
+
+        }
+        .active{
+            background: #fff;
+        }
+        .leftActive{
+            left: -500px;
+        }
+
+        #left,#right{
+            width: 50px;
+            height: 30px;
+            background: orange;
+            color: #fff;
+            position: absolute;
+            top: 50%;
+            text-align: center;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        #left{
+            left: 0;
+        }
+        #right{
+            right: 0;
+        }
+        .arrow-icon{
+            display: none;
+        }
+        .arrow-dot{
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+<div class="slider">
+
+</div>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/slide_new.js"></script>
+<script>
+    $(function(){
+        $.getJSON('data/Img.json',function(data){
+            $('.slider').slider({
+                arrow:true,
+                icon:true,
+                opacity: false,
+                left: true,
+                top: false,
+                data: data
+            })
+        })
+    })
+</script>
+</body>
+</html>
