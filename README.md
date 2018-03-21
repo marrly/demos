@@ -1,2 +1,1 @@
-# testGit
-test git
+slider ########无缝连接轮播图####
